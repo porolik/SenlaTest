@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+<body>
+    <input type="number" id="input_form" placeholder="Введите число"/>
+    <input type="submit" onclick="getValue()"/>
+    <div id = "main"> </div>
+        <script>
+            function getValue(){
+                var text = document.getElementById("input_form").value;
+                var i = 1;
+                for (i; i <= text ; i++){
+                    var div = document.createElement("span");
+                    div.innerHTML= i + "sheep...";
+                    document.getElementById("main").appendChild(div);
+                }
+            }
+        </script>
+</body>
+</html>

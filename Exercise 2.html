@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+</head>
+<body>
+    <input id="number" type="number" min="0" max="30" value="1"/>
+    <input type="button" onclick="calculate()" value="Отправить"/>
+    <div id="main"></div>
+        <script>
+            function calculate() {
+                document.getElementById("main").innerHTML = "";
+                var count = document.getElementById("number").value;
+                if (count <= 30 && count > 0) {
+                    for (var i = 0; i < count; i++) {
+                        createNewLineDiv(i);
+                        if (count != 1) {
+                            for (var j = 0; j < count; j++) {
+                                createDiv(i);
+                            }
+                        } else {
+                            createDiv(i);
+                        }
+                    }
+                } else {
+                    document.getElementById("main").innerHTML = "ВВедите число от 0 до 30!"
+                }
+            }
+            function createDiv(i) {
+                var div = document.createElement("div");
+                div.style.width = "40px";
+                div.style.height = "20px";
+                div.style.margin = "2px";
+                div.style.background = getRandomColor();
+                document.getElementById("newLine" + i).appendChild(div)
+            }
+            function createNewLineDiv(i) {
+                var div = document.createElement("div");
+                div.id = "newLine" + i;
+                div.style.display = "inline-block";
+                document.getElementById("main").appendChild(div)
+            }
+            function getRandomColor() {
+                var x = Math.floor(Math.random() * 256);
+                var y = Math.floor(Math.random() * 256);
+                var z = Math.floor(Math.random() * 256);
+                var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+                return bgColor
+            }
+        </script>
+</body>
+</html>

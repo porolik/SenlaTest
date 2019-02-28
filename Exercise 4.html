@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+</head>
+<body>
+    <script>
+
+        var Array = [0,1,2,3,4,5];
+        var size = 3;
+        var modArray = [];
+        for (var i = 0; i < Math.ceil(Array.length/size); i++){
+            modArray[i] = Array.slice((i*size), (i*size) + size);
+        }
+        console.log(modArray);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
+</head>
+<body>
+    <input id="input" style="width: 600px;" />
+    <button type="submit" id="b1">Отправить</button>
+    <div id="main"> </div>
+        <script>
+            document.getElementById("b1").onclick = () => {
+                var words = document.getElementById("input").value.split(" "),
+                    count = words.length;
+                var min = words[0].length,
+                    current;
+                for (var i = 1; i < count; i++) {
+                    current = words[i].length;
+                    if (current < min)
+                        min = current;
+                }
+                var div = document.createElement("div");
+                div.innerHTML = "The shortest length of the word:" + min;
+                document.getElementById("main").appendChild(div);
+            };
+        </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 5</title>
+</head>
+<body>
+    <script>
+
+        var array = [3,2,1,5,4];
+        var newArr = array.push(1.5);
+        array.sort(function (a , b ){
+            return a - b
+        });
+        i = array.length, min = array[0], index = 0;
+        while (i--) {
+            if (array[i] < min) {
+                min = array[i];
+                index = i;
+            }
+        }
+        console.log("array[" + index + "] = " + min);
+
+    </script>
+</body>
+</html>

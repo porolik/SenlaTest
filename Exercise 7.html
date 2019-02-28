@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7</title>
+</head>
+<body>
+    <script>
+
+        class ValueObj {
+            constructor(value) {
+                this.value = value;
+            }
+            setValue(value) {
+                this.value = value;
+            }
+            getValue() {
+                return this.value;
+            }
+        }
+        var obj = createObj(5);
+
+        function createObj(value) {
+            return new ValueObj(value)
+        }
+        console.log("getValue = " + obj.getValue());
+        console.log("setValue = 2");
+        obj.setValue(2);
+        console.log("getValue = " + obj.getValue());
+
+    </script>
+</body>
+</html>

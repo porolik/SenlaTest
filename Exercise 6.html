@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6</title>
+</head>
+<body>
+    <script>
+
+        function create(array, nt) {
+            var width = 0;
+            var sp = "";
+
+            for (var i = 0; i < array.length; i++) {
+                if(array[i].length > width){
+                    width = array[i].length + 1;
+                }
+            }
+            for (var i = 0; i<= width + 2; i++) {
+                sp += nt;
+            }
+            for (var j = 0; j < array.length; j++) {
+                for(var i = 0; i < array[j].length; i++) {
+                    while(array[j].length < width) {
+                        array[j] += " ";
+                    }
+                    while(array[j].length == width ) {
+                        array[j] = nt + " " + array[j] + nt;
+                    }
+                }
+            }
+            array.push(sp);
+            array.unshift(sp);
+
+            for (var v in array) {
+                console.log(array[v]);
+            }
+        }
+        create(["create", "a", "frame"],"+");
+
+    </script>
+</body>
+</html>
